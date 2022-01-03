@@ -744,8 +744,23 @@ class Character extends FlxSprite
 				updateHitbox();
 
 				playAnim('a', true);
-		}
+		        case 'ander':
+				tex = Paths.getSparrowAtlas('characters/Ander');
+				frames = tex;
+				animation.addByPrefix('idle', 'ander idle', 24);
+				animation.addByPrefix('singUP', 'ander up', 24);
+				animation.addByPrefix('singRIGHT', 'ander right', 24);
+				animation.addByPrefix('singDOWN', 'ander down', 24);
+				animation.addByPrefix('singLEFT', 'ander left', 24);
 
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+
+				playAnim('idle');
+		}
 		dance();
 
 		if (isPlayer)
